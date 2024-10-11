@@ -333,7 +333,11 @@ public class ChargingControlController extends LineageHealthFeature {
 
     private void onPowerDisconnected() {
         if (mBattReceiver != null) {
-            mContext.unregisterReceiver(mBattReceiver);
+            try {
+                mContext.unregisterReceiver(mBattReceiver);
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            }
         }
 
         // On disconnected, reset internal state
