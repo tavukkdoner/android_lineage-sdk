@@ -325,8 +325,9 @@ public class ChargingControlController extends LineageHealthFeature {
             try {
                 mContext.unregisterReceiver(mBattReceiver);
             } catch (IllegalArgumentException e) {
-                e.printStackTrace();
+                Log.w(TAG, "Attempted to unregister receiver that was not registered");
             }
+            mBattReceiver = null;
         }
 
         // On disconnected, reset internal state
