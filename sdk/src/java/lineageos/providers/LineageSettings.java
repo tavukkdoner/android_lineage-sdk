@@ -3015,14 +3015,6 @@ public final class LineageSettings {
                 sBooleanValidator;
 
         /**
-         * Whether tethering is allowed to use VPN upstreams
-         * 0 = false, 1 = true
-         */
-        public static final String TETHERING_ALLOW_VPN_UPSTREAMS = "tethering_allow_vpn_upstreams";
-
-        public static final Validator TETHERING_ALLOW_VPN_UPSTREAMS_VALIDATOR = sBooleanValidator;
-
-        /**
          * Whether to use black theme for dark mode
          * @hide
          */
@@ -3058,7 +3050,6 @@ public final class LineageSettings {
             VALIDATORS.put(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_UNITS, NETWORK_TRAFFIC_UNITS_VALIDATOR);
             VALIDATORS.put(NETWORK_TRAFFIC_SHOW_UNITS, NETWORK_TRAFFIC_SHOW_UNITS_VALIDATOR);
-            VALIDATORS.put(TETHERING_ALLOW_VPN_UPSTREAMS, TETHERING_ALLOW_VPN_UPSTREAMS_VALIDATOR);
             VALIDATORS.put(TRUST_WARNINGS, TRUST_WARNINGS_VALIDATOR);
             VALIDATORS.put(VOLUME_PANEL_ON_LEFT, VOLUME_PANEL_ON_LEFT_VALIDATOR);
         }
