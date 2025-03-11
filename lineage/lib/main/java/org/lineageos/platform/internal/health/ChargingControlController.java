@@ -386,12 +386,15 @@ public class ChargingControlController extends LineageHealthFeature {
 
         mCurrentProvider.enable();
 
+        ChargeTime chargeTime = getChargeTime();
+		
         if (mode == MODE_LIMIT) {
-            if (mCurrentProvider.update(mBatteryPct, limit)) {
+            if (mCurrentProvider.update(mBatteryPct, limit) && chargeTime != null) {
                 mChargingNotification.post(limit, mBatteryPct == limit);
+            } else {
+                mChargingNotification.cancel();
             }
         } else {
-            ChargeTime chargeTime = getChargeTime();
             if (chargeTime != null) {
                 if (mCurrentProvider.update(mBatteryPct, chargeTime.getStartTime(),
                         chargeTime.getTargetTime(), mode)) {
